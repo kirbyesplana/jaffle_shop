@@ -1,0 +1,160 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: raw
+    schema: jaffle_shop
+    description: A clone of a snowflake application database.
+    tables:
+      - name: customers
+        description: Raw customer data
+        columns:
+          - name: id
+            description: Primary key for customer data
+            data_tests:
+              - unique
+              - not_null
+          - name: first_name
+            description: Customer first name.
+          - name: last_name
+            description: Customer last name.
+          - name: mobile_number
+            description: Customer mobile phone number.
+
+      - name: customers_training
+        description: Raw customer training dataset (customers variant used for experimentation/training).
+        columns:
+          - name: id
+            description: Customer identifier in the training dataset.
+          - name: name
+            description: Customer name in the training dataset.
+
+      - name: items
+        description: Raw line-item level records for orders.
+        columns:
+          - name: id
+            description: Line item identifier.
+          - name: order_id
+            description: Foreign key to the order.
+          - name: sku
+            description: Foreign key to the purchased product.
+
+      - name: orders
+        description: Raw orders data.
+        columns:
+          - name: id
+            description: Primary key for orders data
+            data_tests:
+              - unique
+              - not_null
+          - name: user_id
+            description: Customer/user identifier placing the order.
+          - name: order_date
+            description: Date the order was placed.
+          - name: status
+            description: Order status (e.g. placed, shipped, completed).
+          - name: _etl_loaded_at
+            description: Timestamp when the record was loaded by the ELT process.
+          - name: cdel3
+            description: Raw source field (unmodeled); kept for lineage/debugging.
+
+      - name: orders_jdelgado
+        description: Raw orders dataset variant maintained by jdelgado.
+        columns:
+          - name: id
+            description: Order identifier.
+          - name: user_id
+            description: Customer/user identifier placing the order.
+          - name: order_date
+            description: Date the order was placed.
+          - name: status
+            description: Order status.
+          - name: _etl_loaded_at
+            description: Timestamp when the record was loaded by the ELT process.
+
+      - name: orders_snapshot2
+        description: Snapshot/backup copy of raw orders data.
+        columns:
+          - name: id
+            description: Order identifier.
+          - name: customer
+            description: Customer name/identifier captured in the snapshot.
+          - name: ordered_at
+            description: Timestamp the order was placed.
+          - name: store_id
+            description: Store identifier.
+          - name: subtotal
+            description: Order subtotal (pre-tax).
+          - name: tax_paid
+            description: Tax amount paid.
+          - name: order_total
+            description: Total order amount (including tax).
+          - name: dbt_scd_id
+            description: dbt snapshot surrogate key.
+          - name: dbt_updated_at
+            description: Timestamp when dbt last updated this snapshot record.
+          - name: dbt_valid_from
+            description: Snapshot validity start timestamp.
+          - name: dbt_valid_to
+            description: Snapshot validity end timestamp.
+
+      - name: orders_training
+        description: Raw orders training dataset (orders variant used for experimentation/training).
+        columns:
+          - name: id
+            description: Order identifier in the training dataset.
+          - name: customer
+            description: Customer name/identifier in the training dataset.
+          - name: ordered_at
+            description: Timestamp the order was placed.
+          - name: store_id
+            description: Store identifier.
+          - name: subtotal
+            description: Order subtotal (pre-tax).
+          - name: tax_paid
+            description: Tax amount paid.
+          - name: order_total
+            description: Total order amount (including tax).
+
+      - name: products
+        description: Raw product catalog data.
+        columns:
+          - name: sku
+            description: Product SKU / identifier.
+          - name: name
+            description: Product name.
+          - name: type
+            description: Product category/type.
+          - name: price
+            description: Product price.
+          - name: description
+            description: Product description.
+
+      - name: stores
+        description: Raw store/location reference data.
+        columns:
+          - name: id
+            description: Store identifier.
+          - name: name
+            description: Store name.
+          - name: opened_at
+            description: Timestamp the store opened.
+          - name: tax_rate
+            description: Store tax rate.
+
+      - name: supplies
+        description: Raw inventory/supply data by product and store.
+        columns:
+          - name: id
+            description: Supply identifier.
+          - name: name
+            description: Supply name.
+          - name: cost
+            description: Cost of the supply.
+          - name: perishable
+            description: Whether the supply is perishable.
+          - name: sku
+            description: Associated product SKU.
+
+
+   

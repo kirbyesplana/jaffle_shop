@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: raw
+    schema: stripe
+    tables:
+      - name: payment
+        description: Raw Stripe payment records.
+        columns:
+          - name: id
+            description: Primary key for the payment record.
+          - name: orderid
+            description: Identifier for the related order.
+          - name: paymentmethod
+            description: Payment method used (e.g. card).
+          - name: status
+            description: "{{ doc('stripe_payment_status') }}"
+          - name: amount
+            description: Payment amount.
+          - name: created
+            description: Date the payment was created.
+          - name: _batched_at
+            description: Timestamp when the record was batched/loaded.
+
