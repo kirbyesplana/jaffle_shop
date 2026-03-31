@@ -49,3 +49,5 @@ models:
             +materialized: table
         finance: 
             +materialized: table
+    snowflake_spend:
+      +enabled: true
