@@ -46,5 +46,9 @@ models:
         +materialized: table
       finance:
         +materialized: table
+
+  snowflake_spend:
+    snowflake_query_history:
+      +enabled: false
 flags:
   require_generic_test_arguments_property: true
