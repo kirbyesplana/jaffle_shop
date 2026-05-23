@@ -8,7 +8,4 @@ packages:
   - git: https://github.com/dbt-labs/dbt-audit-helper.git
     name: audit_helper
     revision: 71817f0a7fa3df9f63adb90db0cf28f7423f720b
-  - name: snowflake_spend
-    package: gitlabhq/snowflake_spend
-    version: 1.4.0
-sha1_hash: a5758956e1b2f5becf0ea7340f9bcd70356fa9fe
+sha1_hash: 3aa04d92d53b82e2ffe9172a6d4f0fcff86bc076
