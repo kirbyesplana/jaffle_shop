@@ -23,6 +23,10 @@ models:
         dimension:
           type: time
 
+      - name: status
+        dimension:
+          type: categorical
+
     metrics:
       - name: revenue
         type: simple
