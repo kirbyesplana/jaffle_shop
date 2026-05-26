@@ -21,6 +21,7 @@ order_payments as (
         orders.order_id,
         orders.customer_id,
         orders.order_date,
+        orders.order_status as status,
         coalesce (order_payments.amount, 0) as amount
 
     from orders
