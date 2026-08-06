@@ -1,4 +1,4 @@
--- Mirrors stg_ps_dbo__ps_item's exact pattern: a bare `*,` wildcard mixed
+-- Mirrors stg_ps_dbo__ps_item's exact pattern
 -- with explicitly-aliased columns. The column we're tracing (first_name)
 -- is NOT in the explicit rename list -- it only comes through via `*`.
 
