@@ -36,8 +36,9 @@ sources:
             data_tests:
               - relationships:
                   arguments:
-                    to: ref('stg_jaffle_shop__customers')
+                    to: source('dbt_kesplana', 'stg_jaffle_shop__customers')
                     field: customer_id
+
 
       - name: stg_stripe__payment
       - name: stg_stripe__payments
