@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: repro_source
-    schema: public
+    schema: dbt_ke_schema
     tables:
       - name: raw_a
         loaded_at_field: loaded_at
