@@ -1,9 +1,0 @@
-name: 'jaffle_shop'
-version: '1.0.0'
-config-version: 2
-profile: 'Snowflake-deployment-sandbox'
-
-model-paths: ["models"]
-clean-targets:
-  - "target"
-  - "dbt_packages"
