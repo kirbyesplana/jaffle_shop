@@ -1,0 +1,1 @@
+select * from {{ source('pp_repro_raw', 'events') }}

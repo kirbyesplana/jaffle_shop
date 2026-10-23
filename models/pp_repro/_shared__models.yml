@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: child_model
+    description: "defined in the shared file"
+  - name: other_model
+    description: "stays in the shared file"
