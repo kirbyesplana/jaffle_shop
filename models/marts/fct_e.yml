@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: fct_e
+    description: "Downstream fact E - moved to its own file"
+    columns:
+      - name: a_id
+        data_tests:
+          - not_null
