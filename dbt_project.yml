@@ -1,7 +1,7 @@
-name: 'repro_sandbox'
+name: 'KE Sandbox'
 version: '1.0.0'
 config-version: 2
-profile: 'repro_sandbox'
+profile: 'Snowflake-deployment-sandbox'
 
 model-paths: ["models"]
 clean-targets:
