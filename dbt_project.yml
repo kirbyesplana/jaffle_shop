@@ -1,7 +1,7 @@
-name: 'jaffle_shop'
+name: 'repro_sandbox'
 version: '1.0.0'
 config-version: 2
-profile: 'Snowflake-deployment-sandbox'
+profile: 'repro_sandbox'
 
 model-paths: ["models"]
 clean-targets:
