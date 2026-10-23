@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: int_c
+    description: "Joins staging A and B"
+    columns:
+      - name: a_id
+        data_tests:
+          - not_null
+      - name: b_id
+        data_tests:
+          - not_null
+
+  - name: fct_d
+    description: "Downstream fact D - will be moved out in the repro step"
+    columns:
+      - name: a_id
+        data_tests:
+          - not_null
+
+  - name: fct_e
+    description: "Downstream fact E - will be moved out in the repro step"
+    columns:
+      - name: a_id
+        data_tests:
+          - not_null
